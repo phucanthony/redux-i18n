@@ -6,6 +6,7 @@
 
 
 import React from 'react'
+import { Text } from 'react-native';
 
 const interpolateParams = (text, params) => {
   if (!params) {
@@ -28,7 +29,7 @@ const interpolateParams = (text, params) => {
   return children.some(child => child && typeof child === 'object')
     // When React 16 is released, change the span to an identity function for array children,
     // removing the extra dom node
-    ? React.createElement('span', null, ...children)
+    ? React.createElement(Text, null, ...children)
     : children.join('');
 };
 
